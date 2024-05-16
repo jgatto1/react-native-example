@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SeekingSafety</string>
+    <string name="facebook_app_id">441395644500722</string> <!--FB dashboard app id -->
+    <string name="facebook_client_token">129b412fb5fb50e608491ce4f81c50aa</string> <!-->FB dashboard: settings->advanced <-->
+</resources>

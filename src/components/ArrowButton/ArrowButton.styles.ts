@@ -1,0 +1,77 @@
+import { Dimensions, Platform } from 'react-native';
+import { makeStyle } from '@hooks/themed-style.hook';
+
+var width = Dimensions.get('window').width;
+
+export const useArrowButtonStyles = makeStyle((theme) => ({
+  wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 0,
+    marginTop: 0,
+  },
+  rectangle: {
+    width: width - 50,
+    backgroundColor: theme.palette.other.dailyActions.button.background,
+    height: 60,
+    paddingVertical: 15,
+    marginRight: 6,
+    paddingHorizontal: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'row',
+    margin: 0,
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
+    borderTopRightRadius: 1,
+    borderBottomRightRadius: 1,
+  },
+  text: {
+    fontWeight: '400',
+    marginLeft: 0,
+    fontSize: Platform.OS === 'android' ? 13 : 13,
+    width: Platform.OS === 'android' ? width : 'auto',
+  },
+  triangleContainer: {
+    height: 60,
+    width: 30,
+    zIndex: 3,
+  },
+  triangle: {
+    position: 'absolute',
+    width: 0,
+    height: 0,
+    backgroundColor: 'transparent',
+    borderStyle: 'solid',
+    borderLeftWidth: 30,
+    borderRightWidth: 30,
+    borderBottomWidth: 30,
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: theme.palette.other.dailyActions.button.background,
+    transform: [{ rotate: '90deg' }],
+    margin: 0,
+    top: 15,
+    marginLeft: -15,
+    borderWidth: 0,
+    zIndex: 2,
+  },
+  triangleShadow: {
+    borderBottomColor: 'black',
+    opacity: 0.05,
+    top: 18,
+    zIndex: 1,
+  },
+  tagContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.palette.other.dailyActions.button.background,
+    borderRadius: 16,
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+  },
+}));
